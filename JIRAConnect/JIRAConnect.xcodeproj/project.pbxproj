@@ -30,11 +30,11 @@
 		01D23C06149602AF004D4D63 /* JMCSketchViewControllerFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 01D23C04149602AF004D4D63 /* JMCSketchViewControllerFactory.h */; };
 		01D23C07149602AF004D4D63 /* JMCSketchViewControllerFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D23C05149602AF004D4D63 /* JMCSketchViewControllerFactory.m */; };
 		01E36567143BACA900A5239D /* JMCTestConfiguration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01E36566143BACA900A5239D /* JMCTestConfiguration.plist */; };
-		2054C6FB1BA712730022A90F /* UIImage+JMC.h in Headers */ = {isa = PBXBuildFile; fileRef = 2054C6F91BA712730022A90F /* UIImage+JMC.h */; settings = {ASSET_TAGS = (); }; };
-		2054C6FC1BA712730022A90F /* UIImage+JMC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2054C6FA1BA712730022A90F /* UIImage+JMC.m */; settings = {ASSET_TAGS = (); }; };
-		282436671BA37770008BD577 /* NSBundle+JMC.h in Headers */ = {isa = PBXBuildFile; fileRef = 282436651BA37770008BD577 /* NSBundle+JMC.h */; settings = {ASSET_TAGS = (); }; };
-		282436681BA37770008BD577 /* NSBundle+JMC.m in Sources */ = {isa = PBXBuildFile; fileRef = 282436661BA37770008BD577 /* NSBundle+JMC.m */; settings = {ASSET_TAGS = (); }; };
-		2824366C1BA37AFA008BD577 /* JMCLocalization.h in Headers */ = {isa = PBXBuildFile; fileRef = 2824366A1BA37AFA008BD577 /* JMCLocalization.h */; settings = {ASSET_TAGS = (); }; };
+		2054C6FB1BA712730022A90F /* UIImage+JMC.h in Headers */ = {isa = PBXBuildFile; fileRef = 2054C6F91BA712730022A90F /* UIImage+JMC.h */; };
+		2054C6FC1BA712730022A90F /* UIImage+JMC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2054C6FA1BA712730022A90F /* UIImage+JMC.m */; };
+		282436671BA37770008BD577 /* NSBundle+JMC.h in Headers */ = {isa = PBXBuildFile; fileRef = 282436651BA37770008BD577 /* NSBundle+JMC.h */; };
+		282436681BA37770008BD577 /* NSBundle+JMC.m in Sources */ = {isa = PBXBuildFile; fileRef = 282436661BA37770008BD577 /* NSBundle+JMC.m */; };
+		2824366C1BA37AFA008BD577 /* JMCLocalization.h in Headers */ = {isa = PBXBuildFile; fileRef = 2824366A1BA37AFA008BD577 /* JMCLocalization.h */; };
 		4D71E60E1468962F00E0A7C3 /* JMC.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D71E5801468962F00E0A7C3 /* JMC.h */; };
 		4D71E60F1468962F00E0A7C3 /* JMC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D71E5811468962F00E0A7C3 /* JMC.m */; };
 		4D71E6101468962F00E0A7C3 /* JMCAttachmentItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D71E5821468962F00E0A7C3 /* JMCAttachmentItem.h */; };
@@ -1009,6 +1009,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "JIRAConnect-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				OTHER_CFLAGS = "-fembed-bitcode";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1029,6 +1030,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "JIRAConnect-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				OTHER_CFLAGS = "-fembed-bitcode";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
