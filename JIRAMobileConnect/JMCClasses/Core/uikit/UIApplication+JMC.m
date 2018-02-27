@@ -19,10 +19,41 @@
 @implementation UIApplication (JMC)
 
 + (UIViewController *)jmc_rootViewController {
-    UIViewController *rootViewController = [[[UIApplication sharedApplication] keyWindow] rootViewController];
-    NSAssert(rootViewController != nil, @"JIRA Mobile Connect Assert: "
+//    UIViewController *rootViewController = [[[UIApplication sharedApplication] keyWindow] rootViewController];
+    UIViewController *topMostViewControllerObj = [UIApplication topViewController];
+    NSAssert(topMostViewControllerObj != nil, @"JIRA Mobile Connect Assert: "
              @"Key window must have a root view controller in order to present JIRA Mobile Connect alert controllers.");
-    return rootViewController;
+    return topMostViewControllerObj;
+}
+
++ (UIViewController*)topViewController {
+  return [self topViewControllerWithRootViewController:[UIApplication sharedApplication].keyWindow.rootViewController];
+}
+
++ (UIViewController*)topViewControllerWithRootViewController:(UIViewController*)viewController {
+  if ([viewController isKindOfClass:[UITabBarController class]]) {
+    UITabBarController* tabBarController = (UITabBarController*)viewController;
+    return [self topViewControllerWithRootViewController:tabBarController.selectedViewController];
+  } else if ([viewController isKindOfClass:[UINavigationController class]]) {
+    UINavigationController* navContObj = (UINavigationController*)viewController;
+    return [self topViewControllerWithRootViewController:navContObj.visibleViewController];
+  } else if (viewController.presentedViewController && !viewController.presentedViewController.isBeingDismissed) {
+    UIViewController* presentedViewController = viewController.presentedViewController;
+    return [self topViewControllerWithRootViewController:presentedViewController];
+  }
+  else {
+    for (UIView *view in [viewController.view subviews])
+    {
+      id subViewController = [view nextResponder];
+      if ( subViewController && [subViewController isKindOfClass:[UIViewController class]])
+      {
+        if ([(UIViewController *)subViewController presentedViewController]  && ![subViewController presentedViewController].isBeingDismissed) {
+          return [self topViewControllerWithRootViewController:[(UIViewController *)subViewController presentedViewController]];
+        }
+      }
+    }
+    return viewController;
+  }
 }
 
 @end

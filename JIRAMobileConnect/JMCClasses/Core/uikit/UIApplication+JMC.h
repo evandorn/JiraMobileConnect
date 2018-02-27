@@ -19,5 +19,7 @@
 @interface UIApplication (JMC)
 
 + (UIViewController *)jmc_rootViewController;
++ (UIViewController*)topViewController;
++ (UIViewController*)topViewControllerWithRootViewController:(UIViewController*)viewController;
 
 @end
