@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "JIRAMobileConnect"
-  s.version      = "1.2.2"
+  s.version      = "1.2.6"
   s.summary      = "Enables JIRA to collect user feedback and real-time crash reports."
 
   s.description  = <<-DESC
@@ -11,33 +11,34 @@ Pod::Spec.new do |s|
                    * Rich Data Collection-  Capture text and audio comments, annotated screenshots, and map any custom application data to fields in JIRA
                    DESC
 
-  s.homepage     = "https://bitbucket.org/atlassian/jiraconnect-ios"
+  s.homepage     = "https://bitbucket.org/atlassian/jiraconnect-apple"
   s.license      = "Apache License, Version 2.0"
   s.authors          = { "Nick Pellow" => "http://twitter.com/niick", "Thomas Dohmke" => "http://twitter.com/ashtom", "Stefan Saasen" => "http://twitter.com/stefansaasen", "Shihab Hamid" => "http://twitter.com/shihabhamid", "Erik Romijn" => "http://twitter.com/erikpub", "Bindu Wavell" => "http://twitter.com/binduwavell", "Theodora Tse" => "" }
 
-  s.platform     = :ios, "7.0"
+  s.platform     = :ios, "8.0"
   s.source       = { :git => "https://github.com/evandorn/JiraMobileConnect" }
   s.source_files = [
-    'JIRAConnect/JMCClasses/Base/**/*.{h,m,mm}',
-    'JIRAConnect/JMCClasses/Core/**/*.{h,m,mm}'
+    "JIRAMobileConnect/JMCClasses/Base/**/*.{h,m,mm}",
+    "JIRAMobileConnect/JMCClasses/Core/**/*.{h,m,mm}"
   ]
   s.public_header_files = [
-    'JIRAConnect/JMCClasses/Base/**/*.{h}',
-    'JIRAConnect/JMCClasses/Core/attachments/**/*.{h}',
-    'JIRAConnect/JMCClasses/Core/sketch/**/*.{h}',
-    'JIRAConnect/JMCClasses/Core/transport/**/*.{h}',
-    'JIRAConnect/JMCClasses/Core/model/**/*.{h}',
-    'JIRAConnect/JMCClasses/Core/queue/**/*.{h}',
-    'JIRAConnect/JMCClasses/Core/audio/**/*.{h}'
+    "JIRAMobileConnect/JMCClasses/Base/**/*.{h}",
+    "JIRAMobileConnect/JMCClasses/Core/attachments/**/*.{h}",
+    "JIRAMobileConnect/JMCClasses/Core/sketch/**/*.{h}",
+    "JIRAMobileConnect/JMCClasses/Core/transport/**/*.{h}",
+    "JIRAMobileConnect/JMCClasses/Core/model/**/*.{h}",
+    "JIRAMobileConnect/JMCClasses/Core/queue/**/*.{h}",
+    "JIRAMobileConnect/JMCClasses/Core/audio/**/*.{h}"
   ]
   s.resources = [
-    'JIRAConnect/JMCClasses/Base/**/*.{xib}',
-    'JIRAConnect/JMCClasses/Core/**/*.{xib}',
-    'JIRAConnect/JMCClasses/Resources/**/*.{png,bundle}'
+    "JIRAMobileConnect/JMCClasses/Base/**/*.{xib}",
+    "JIRAMobileConnect/JMCClasses/Core/**/*.{xib}",
+    "JIRAMobileConnect/JMCClasses/Resources/**/*.{png,bundle}"
   ]
-  s.frameworks = 'CFNetwork', 'SystemConfiguration', 'MobileCoreServices', 'CoreGraphics', 'AVFoundation', 'CoreLocation'
-  s.libraries = 'sqlite3'
-  s.vendored_frameworks = "JIRAConnect/JMCClasses/libraries/CrashReporter.framework"
+  s.frameworks = "CFNetwork", "SystemConfiguration", "MobileCoreServices", "CoreGraphics", "AVFoundation", "CoreLocation"
+  s.libraries = "sqlite3"
+  s.vendored_frameworks = "JIRAMobileConnect/JMCClasses/Libraries/CrashReporter.framework"
 
   s.requires_arc = true
+
 end
